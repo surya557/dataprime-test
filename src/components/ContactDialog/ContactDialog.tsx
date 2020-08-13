@@ -8,10 +8,11 @@ import {
     FormControl,
     InputLabel,
     Select,
-    TextField,
+    TextField, Typography,
     useMediaQuery,
     useTheme
 } from "@material-ui/core";
+import * as Styled from './styled';
 
 interface Props {
 
@@ -41,38 +42,42 @@ const ContactDialog = (props: Props) => {
                 open={open}
                 fullScreen={fullScreen}
                 onClose={handleDialogClose}
+                fullWidth={true}
             >
                 <DialogTitle>
                     {`Contact Us`}
                 </DialogTitle>
                 <DialogContent>
-                    <form>
-                        <FormControl>
-                            <InputLabel>
+                    <Styled.ContactForm>
+                        <FormControl style={{paddingBottom: 10}}>
+                            <Typography>
                                 Contact Type
-                            </InputLabel>
-                            <Select>
-                                <option value={''}>Choose</option>
+                            </Typography>
+                            <Select defaultValue={'choose'} variant={'outlined'}>
+                                <option value={'choose'}>Choose</option>
                             </Select>
                         </FormControl>
                         <FormControl>
-                            <InputLabel>
+                            <Typography>
                                 Type Message
-                            </InputLabel>
+                            </Typography>
                             <TextField
-                                value={'Message'}
+                                placeholder={'Message'}
                                 multiline={true}
                                 rowsMax={4}
+                                rows={4}
                                 id={'message-box'}
+                                variant={'outlined'}
+                                fullWidth={true}
                             />
                         </FormControl>
-                    </form>
+                    </Styled.ContactForm>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleDialogClose}>
+                    <Button variant="outlined" onClick={handleDialogClose}>
                         Cancel
                     </Button>
-                    <Button onClick={handleDialogClose}>
+                    <Button variant="contained" onClick={handleDialogClose} color="primary">
                         Send
                     </Button>
                 </DialogActions>

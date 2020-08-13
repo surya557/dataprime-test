@@ -15,7 +15,7 @@ const SkillSet = (props: Props) => {
         isCandidate,
         noMatch } = props;
     return(
-        <Styled.SkillChip alignContent={isCandidate}>
+        <Styled.SkillChip noMatch={noMatch!}>
             {noMatch &&
             <CircularProgress
                 variant="static"

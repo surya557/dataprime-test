@@ -1,7 +1,7 @@
 import * as React from 'react';
 import SkillSet from "../SkillSet/SkillSet";
-import {Paper} from "@material-ui/core";
 import * as Styled from './styled';
+import { Comparison } from '../ComparisonPane/styled';
 
 interface Props {
     requiredExperience: number;
@@ -17,19 +17,23 @@ const SkillComparator = (props: Props) => {
 
     return (
         <Styled.SkillCompare>
-            <SkillSet
-                skill={skill}
-                progressValue={100}
-                isCandidate={true}
-                noMatch={!isNaN(percentage)}
-            />
-            <Paper>{isNaN(percentage) ? `N/A` : `${percentage}%`}</Paper>
-            <SkillSet
-                skill={skill}
-                progressValue={percentage >= 100 ? percentage : 100 - percentage}
-                isCandidate={false}
-                noMatch={!isNaN(percentage)}
-            />
+            <div style={{flex: 1}}>
+            </div>
+            <div style={{flex: 3, display: "flex"}}>
+                <SkillSet
+                    skill={skill}
+                    progressValue={100}
+                    isCandidate={true}
+                    noMatch={!isNaN(percentage)}
+                />
+                <Comparison square={true}>{isNaN(percentage) ? `N/A` : `${percentage}%`}</Comparison>
+                <SkillSet
+                    skill={skill}
+                    progressValue={percentage >= 100 ? percentage : 100 - percentage}
+                    isCandidate={false}
+                    noMatch={!isNaN(percentage)}
+                />
+            </div>
         </Styled.SkillCompare>
     )
 }

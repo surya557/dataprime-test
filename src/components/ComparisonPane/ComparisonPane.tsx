@@ -11,10 +11,10 @@ const ComparisonPane: React.FunctionComponent<Props> = props => {
     return (
         <Styled.MainSection>
             <Styled.InnerSection>
-                <Typography>{category}</Typography>
-                <Typography>CANDIDATE</Typography>
-                <Paper>VS</Paper>
-                <Typography>BUSINESS</Typography>
+                <Styled.CategoryLabel>{category}</Styled.CategoryLabel>
+                <Styled.CandidateLabel>CANDIDATE</Styled.CandidateLabel>
+                <Styled.Comparison square={true}>VS</Styled.Comparison>
+                <Styled.BusinessLabel>BUSINESS</Styled.BusinessLabel>
             </Styled.InnerSection>
             <Styled.SkillSection>
                 {props.children}

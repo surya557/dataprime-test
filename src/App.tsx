@@ -38,12 +38,20 @@ function App() {
                     candidate={candidateDetails}
                     role={'GENENTECH - Manufacturing Data Scientist'}
                 />
-                <Typography variant={'subtitle1'}>
-                    Technical Skills
-                </Typography>
-                <TechnicalSkillsCategoryContainer category={'Applications'} skills={APPLICATION_SKILLS}/>
-                <TechnicalSkillsCategoryContainer category={'Career'} skills={CAREER_SKILLS}/>
-                <TechnicalSkillsCategoryContainer category={'Delivery'} skills={DELIVERY_SKILLS}/>
+                <div style={{display: 'flex'}}>
+                    <div className={'LeftView'}>
+                    </div>
+                    <div className={'MainBody'}>
+                        <Typography variant={'h6'} align={'left'}>
+                            Technical Skills
+                        </Typography>
+                        <div className={'CategoryContainer'}>
+                            <TechnicalSkillsCategoryContainer category={'Applications'} skills={APPLICATION_SKILLS}/>
+                            <TechnicalSkillsCategoryContainer category={'Career'} skills={CAREER_SKILLS}/>
+                            <TechnicalSkillsCategoryContainer category={'Delivery'} skills={DELIVERY_SKILLS}/>
+                        </div>
+                    </div>
+                </div>
           </div>
       </ThemeProvider>
     );

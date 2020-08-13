@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {Typography} from "@material-ui/core";
 import ComparisonPane from "../../components/ComparisonPane/ComparisonPane";
 import SkillComparator from "../../components/SkillComparator/SkillComparator";
 import {Skill} from "../../types";

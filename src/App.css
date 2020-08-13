@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -37,3 +39,21 @@
     transform: rotate(360deg);
   }
 }
+.CategoryContainer {
+  background-color: #1f1f1f;
+}
+.LeftView {
+  width: 20%;
+}
+.MainBody {
+  flex: 3;
+}
+@media screen and (max-width: 480px) {
+  .MainBody {
+    flex: 4;
+  }
+  .LeftView {
+    display: none;
+  }
+}
+
